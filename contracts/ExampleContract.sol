@@ -78,7 +78,7 @@ contract ExampleContract is ERC721Enumerable, ReentrancyGuard, Ownable {
     function mintWithcastle(uint256 tokenId) public payable nonReentrant {
         require(tokenId > 0 && tokenId <= 10000, "Token ID invalid");
         require(castlesPrice <= msg.value, "Ether value sent is not correct");
-        require(castlesContract.ownerOf(tokenId) == msg.sender, "Not the owner of this loot");
+        require(castlesContract.ownerOf(tokenId) == msg.sender, "Not the owner of this castle");
         _safeMint(_msgSender(), tokenId);
     }
    
