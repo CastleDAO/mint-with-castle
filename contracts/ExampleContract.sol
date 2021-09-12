@@ -68,14 +68,8 @@ contract ExampleContract is ERC721Enumerable, ReentrancyGuard, Ownable {
         return rand % 99;
     }
 
-    function mint(uint256 tokenId) public payable nonReentrant {
-        require(tokenId > 0 && tokenId <= 9900, "Token ID invalid");
-        require(price <= msg.value, "Ether value sent is not correct");
-        _safeMint(_msgSender(), tokenId);
-    }
-
      function mint(uint256 tokenId) public payable nonReentrant {
-        require(tokenId > 0 && tokenId <= 9900, "Token ID invalid");
+        require(tokenId > 0 && tokenId <= 10000, "Token ID invalid");
         require(price <= msg.value, "Ether value sent is not correct");
         _safeMint(_msgSender(), tokenId);
     }

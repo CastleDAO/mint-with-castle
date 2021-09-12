@@ -26,7 +26,7 @@ describe("ExampleContract", function () {
     
     console.log(item);
 
-    expect(item).not.to.be.null();
+    expect(item).to.exist();
     
   });
 
